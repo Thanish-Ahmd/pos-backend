@@ -2,7 +2,6 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { pool } = require("../database");
 
-// const JWT_SECRET = "pos"; // replace with process.env.JWT_SECRET in production
 const TOKEN_EXPIRY = "24h";
 
 const { tokenBlacklist, JWT_SECRET } = require("../middleware/authMiddleware");

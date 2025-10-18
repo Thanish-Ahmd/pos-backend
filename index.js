@@ -5,6 +5,7 @@ const { connectDB, pool } = require("./database");
 const categoryRoute = require("./routes/categoryRoutes");
 const unitRoute = require("./routes/unitRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+const productRoutes = require("./routes/productRoutes");
 const auth = require("./middleware/authMiddleware");
 
 const app = express();
@@ -33,6 +34,7 @@ app.get("/", (req, res) => {
   app.use("/api/categories", categoryRoute);
   app.use("/api/units/", unitRoute);
   app.use("/api/admin/", adminRoutes);
+  app.use("/api/products/", productRoutes);
 
   app.listen(PORT, () => {
     console.log(`🚀 Server started at http://localhost:${PORT}`);
